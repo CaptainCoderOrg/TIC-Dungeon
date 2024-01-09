@@ -1,0 +1,20 @@
+local COLORS = {
+	BLACK = 0,
+	PURPLE = 1,
+	RED = 2,
+	ORANGE = 3,
+	YELLOW = 4,
+	GREEN = 5,
+	DARK_GREEN = 6,
+	TURQOUISE = 7,
+	NAVY = 8,
+	DARK_BLUE = 9,
+	BLUE = 10,
+	CYAN = 11,
+	WHITE = 12,
+	LIGHT_GREY = 13,
+	GREY = 14,
+	DARK_GREY = 15
+}
+
+return COLORS

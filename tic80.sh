@@ -1,2 +1,2 @@
 #!/bin/bash
-tic80 --fs=.
+tic80 --skip --fs=. --cmd="load dungeon.lua & run"

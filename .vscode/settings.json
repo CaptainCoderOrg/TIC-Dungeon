@@ -1,0 +1,26 @@
+{
+    "Lua.runtime.version": "Lua 5.3",
+    "Lua.format.defaultConfig": {
+        "indent_style": "space",
+        "indent_size": "1"
+    },
+    "Lua.diagnostics.globals": [
+        "music",
+        "map",
+        "btnp",
+        "cls",
+        "sfx",
+        "btn",
+        "mset",
+        "mget",
+        "fget",
+        "spr",
+        "rectb",
+        "peek",
+        "poke",
+        "line"
+    ],
+    "Lua.diagnostics.disable": [
+        "lowercase-global"
+    ]
+}

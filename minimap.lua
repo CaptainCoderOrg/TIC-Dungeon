@@ -45,10 +45,14 @@ function visible_cells(player)
     v.fr = DIR.step(v.f, right)
     v.ff = DIR.step(v.f, forward)
     v.ffl = DIR.step(v.ff, left)
+    v.ffll = DIR.step(v.ffl, left)
     v.ffr = DIR.step(v.ff, right)
+    v.ffrr = DIR.step(v.ffr, right)
     v.fff = DIR.step(v.ff, forward)
     v.fffl = DIR.step(v.fff, left)
+    v.fffll = DIR.step(v.fffl, left)
     v.fffr = DIR.step(v.fff, right)
+    v.fffrr = DIR.step(v.fffr, right)
     -- This is the view from the player's perspective
     -- where p is the player looking forward
     -- fffl, fff, fffr
@@ -62,7 +66,8 @@ function cell_a(view)
     if MINIMAP.is_wall(view.l) then return 1 end
     if MINIMAP.is_wall(view.fl) then return 2 end
     if MINIMAP.is_wall(view.ffl) then return 3 end
-    if MINIMAP.is_wall(view.fffl) then return 4 end
+    if MINIMAP.is_wall(view.ffll) then return 5 end
+    if MINIMAP.is_wall(view.fffll) then return 4 end
     return 0
 end
 
@@ -109,7 +114,9 @@ function cell_g(view)
     if MINIMAP.is_wall(view.r) then return 1 end
     if MINIMAP.is_wall(view.fr) then return 2 end
     if MINIMAP.is_wall(view.ffr) then return 3 end
-    if MINIMAP.is_wall(view.fffr) then return 4 end
+    if MINIMAP.is_wall(view.ffrr) then return 5 end
+    if MINIMAP.is_wall(view.ffrr) then return 5 end
+    if MINIMAP.is_wall(view.fffrr) then return 4 end
     return 0
 end
 

@@ -7,6 +7,8 @@ MINIMAP.sprites = {
     floor = 2
 }
 
+local MAP_HEIGHT = 136
+
 function MINIMAP.draw(player, r, offx, offy)
     local x = player.x - r
     local y = player.y - r

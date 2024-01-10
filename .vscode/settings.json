@@ -18,7 +18,9 @@
         "rectb",
         "peek",
         "poke",
-        "line"
+        "line",
+        "peek4",
+        "poke4"
     ],
     "Lua.diagnostics.disable": [
         "lowercase-global"

@@ -8,12 +8,25 @@ local DOOR = 3
 
 local BLUEPRINTS = {
     lrg_rm = { id = 496 },
-    med_rm = { id = 497 },
-    sml_rm = { id = 498 },
-    ew_hall = { id = 499 },
-    ns_hall = { id = 500 },
-    t_hall = { id = 501 },
-    x_hall = { id = 502 },
+    lrg_rm2 = { id = 497 },
+    lrg_rm3 = { id = 498 },
+    lrg_rm4 = { id = 499 },
+    lrg_rm5 = { id = 500 },
+    sml_rm = { id = 480 },
+    sml_rm2 = { id = 481 },
+    hall0 = { id = 464 },
+    hall1 = { id = 465 },
+    hall2 = { id = 466 },
+    hall3 = { id = 467 },
+    hall4 = { id = 468 },
+    hall5 = { id = 469 },
+    hall6 = { id = 470 },
+    hall7 = { id = 471 },
+    hall8 = { id = 472 },
+    hall9 = { id = 473 },
+    hall10 = { id = 474 },
+    hall11 = { id = 465 },
+    hall12 = { id = 476 },
 }
 
 local CONNECTIONS = nil
@@ -50,6 +63,14 @@ local base = nil
 local top = 0
 local left = 90
 local last_p = { x = 0, y = 0 }
+function generator.gen()
+    local map = generator.build_room(BLUEPRINTS.lrg_rm) 
+    local result = generator.add_room(map)
+    while result do 
+        result = generator.add_room(map)
+    end
+    return map
+end
 function generator.debug()
     if btnp(4) then 
         if base ~= nil then
@@ -88,7 +109,7 @@ function generator.add_room(base)
     local next_conn = table.remove(base.connections)
     last_p = next_conn.pos
     local chance = math.random(1, next_conn.depth)
-    if chance > 1 then 
+    if chance > 2 then 
         base.set_tile(next_conn.pos, WALL)
         return true
     end
